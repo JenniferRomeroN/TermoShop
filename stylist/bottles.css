@@ -1,0 +1,53 @@
+.menubottle{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.vasobottle{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(0%, -50%);
+    width: 300px; 
+    height: 300px;
+    align-items: center;
+}
+
+.vasobottle img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: z-index 0.5s, opacity 0.5s;
+    opacity: 0;
+}
+
+.vasobottle img[data-id="1"]{
+    z-index: 5;
+    opacity: 1;
+}
+
+.links{
+    padding: 40rem 8rem;
+    height: 240vh;
+    overflow: hidden;
+}
+
+.menubottle a{
+    text-decoration: none;
+    font-family: "PP Neue Montreal";
+    font-size: 5rem;
+    letter-spacing: -0.2rem;
+    color: rgb(80, 80, 80);
+    transition: all 0.3d ease-in-out;
+}
+
+.menubottle a:hover{
+    color:#fff
+}

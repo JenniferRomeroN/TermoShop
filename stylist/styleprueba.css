@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body{
+    background: linear-gradient(315deg,  #FF1818,#A73489);
+    background: -webkit-linear-gradient(315deg,  #FF1818,#A73489);
+} */
+
+html, body{
+    width: 100%;
+    height: 100%;
+    min-height: 400vh;
+    background: transparent;
+    font-family: "Neue Montreal", sans-serif;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header{
+    top: 0;
+    position: fixed;
+    margin-top: 2em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    color: transparent;
+    z-index: 2;
+}
+
+.header:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background: transparent;
+    z-index: 2;
+}
+
+.header > div{
+    flex: 1;
+    text-align: center;
+}
+
+.header .letter img{
+    display: block;
+}
+
+.nav{
+    top: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0;
+    z-index: 1;
+}
+
+.logo{
+    position: relative;
+}
+
+.logo a{
+    position: relative;
+    top: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-family: "TIMMONS NY 2.0", sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+
+.logo-revealer{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom;
+}
+
+.logo-revealer:after{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 20px;
+    left: 0;
+    background: transparent;
+    z-index: 2;
+}
+
+.website-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    margin: 0 auto;
+    clear: both;
+    flex-grow: 1; 
+}
+
+.website-content-wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.website-content img,
+.website-content p {
+    opacity: 1;
+}
+
+h1{
+    text-align: center;
+    color: #757575;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.125;
+    letter-spacing: -0.012em;
+}
+
+.img{
+    width: 85%;
+    margin: 60px 0;
+    overflow: hidden;
+    border-radius: 40px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+p{
+    color: #ffff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.boton-degrade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+        position: relative;
+        background: linear-gradient(-90deg, #EE7752, #E73C7E, #23A6D5, #23D5AB, #EE7752);
+        background-size: 400% 100%;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: none;
+        border-radius: 0.25em;
+        font-size: 13px;
+        letter-spacing: 1px;
+        padding: 15px;
+        margin: 0;
+        animation: Gradient 4s ease infinite;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+}
+
+.btn div {
+        color: black;
+        min-height: 40px;
+        padding: 0 1.618em;
+        border-radius: inherit;
+        background-size: inherit;
+        background-image: inherit;
+        animation: Gradient 4s ease infinite;
+        position: relative;
+        z-index: 1;
+        mix-blend-mode: overlay;
+        font-family: 'Helvetica Neue';
+        
+}
+
+@keyframes Gradient {
+    50% {
+    background-position: 140% 50%;
+    transform: skew(-2deg);
+    }
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    background-size: inherit;
+    background-image: inherit;
+    animation: inherit;
+    left: 0px;
+    right: 0px;
+    top: 2px;
+    height: 100%;
+    filter: blur(1rem);
+    
+}
+
+.button-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -18,15 +18,37 @@
 					</div>
 
 					<div class="container-logo">
-						<a href="index.html"><i class="fa-brands fa-suse"></i></a>
+						<a href="bienvenida.html"><i class="fa-solid fa-person-running"></i></a>
 					</div>
 
 					<div class="container-user">
-						<i class="fa-solid fa-user"></i>
-						<i class="fa-solid fa-basket-shopping"></i>
+						<a href="login.html"><i class="fa-solid fa-user"></i></a>
+                        <div class="container-icon">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </div>
 						<div class="content-shopping-cart">
-							<span class="text">Carrito</span>
-							<span class="number">(0)</span>
+                            <div class="count-products">
+                                <span id="contador-productos">0</span>
+                            </div>
+                            <div class="container-cart-product
+                            hidden-cart">
+                            <div class="row-product">
+                                <div class="cart-product">
+                                <div class="info-cart-product">
+                                    <span class="cantidad-producto-carrito">1</span>
+                                    <p class="titulo-producto-carrito">Vaso morado</p>
+                                    <span class="precio-producto-carrito">$80</span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>                                  
+                            </div>
+                            </div>
+                            <div class="cart-total">
+                                <h3>Total:</h3>
+                                <span class="total-pagar">$300</span>
+                            </div>  
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -36,10 +58,10 @@
 				<nav class="navbar container">
 					<i class="fa-solid fa-bars"></i>
 					<ul class="menu">
-						<li><a href="#">Home</a></li>
+						<li><a href="index.html">Home</a></li>
 						<li><a href="vasos.html">Vasos</a></li>
-						<li><a href="#">Termos</a></li>
-						<li><a href="#">About us</a></li>
+						<li><a href="termos.html">Termos</a></li>
+						<li><a href="aboutUs.html">About us</a></li>
 					</ul>
 
 					<form class="search-form">
@@ -51,7 +73,6 @@
 				</nav>
 			</div>
 		</header>
-
         <section class="banner">
             <div class="content-banner">
                 <h2>MAKE A FRESH START</h2>
@@ -155,7 +176,7 @@
                             <div class="container-img">
                                 <img
                                     src="image/stanley azulverde.jpg"
-                                    alt="Cafe incafe-ingles.jpg"
+                                    alt="stanley"
                                 />
                                 <span class="discount">-22%</span>
                                 <div class="button-group">
@@ -253,7 +274,36 @@
                     </div>
             </section>
         </main>
-
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="image/prueba.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/SliderImage2.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/Slider3.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/Slider4.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/Slider5.jpeg" alt="">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
         <footer class="footer">
             <div class="container container-footer">
                 <div class="menu-footer">
@@ -331,7 +381,7 @@
 			</div>
             </div>
         </footer>
-
+    <script src="scripts/script.js"></script>
     <script src="https://kit.fontawesome.com/93fdee27cd.js" crossorigin="anonymous"></script>
 </body>
 </html>

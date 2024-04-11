@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="bottles.css">
+</head>
+
+<body>
+
+    <div class="menubottle">
+    <div class="vasobottle">
+
+        <img src="image/bottlePink.png" alt="" class="image" data-id="1">
+        <img src="image/bottleYellow.png" alt="" class="image" data-id="2">
+        <img src="image/bottleOrange.png" alt="" class="image" data-id="3">
+        <img src="image/bottleBlue.png" alt="" class="image" data-id="4">
+        <img src="image/bottlegreen.png" alt="" class="image" data-id="5">
+    </div>
+
+        <div class="links">
+        <div class="link">
+            <a href="" data-image="1">Pink</a>
+        </div>
+        <div class="link">
+            <a href="" data-image="2">Yellow</a>
+        </div>
+        <div class="link">
+            <a href="" data-image="3">Orange</a>
+        </div>
+        <div class="link">
+            <a href="" data-image="4">Blue</a>
+        </div>
+        <div class="link">
+            <a href="" data-image="5">Green</a>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+    function lerp(start, end, t) {
+      return start * (1 - t) + end * t;
+    }
+
+    const linksContainer = document.querySelector(".links");
+    let currentScroll = 0;
+    let targetScroll = 0;
+    const ease = 0.1;
+
+    document.addEventListener("mousemove", (e) => {
+        const extraHeight = linksContainer.offsetHeight - window.innerHeight;
+        targetScroll = (e.clientY / window.innerHeight) * -extraHeight;
+    });
+
+    function animate() {
+        currentScroll = lerp(currentScroll, targetScroll, ease);
+        linksContainer.style.transform = `translateY(${currentScroll}px)`;
+        requestAnimationFrame(animate);
+    }
+
+
+    animate();
+
+    let currentImageIdd = 1;
+
+    document.querySelectorAll(".link > a").forEach((link) => {
+        link.addEventListener('mouseenter', function() {
+        const targetImageId = parseInt(this.getAttribute("data-image"));      
+        let rotationValue = targetImageId > currentImageIdd ? 300 : -300;
+
+        const vaso = document.querySelector(".vasobottle");
+        const images = document.querySelectorAll(".vasobottle img");
+
+        gsap.to(vaso, {
+
+            rotation: rotationValue,
+            duration: 0.4,
+            onComplete: function (){
+            gsap.set(vaso,{
+            rotation:0,
+            });
+        },
+    })
+
+
+    gsap.set(images,{
+        zIndex: 0,
+        pacity: 0,
+        delay: 0.25,
+    });
+    gsap.set(`.vasobottle img[data-id='${targetImageId}']`,{
+        zIndex: 5,
+        opacity: 1,
+        delay: 0.25,
+    });
+
+    currentImageIdd = targetImageId;
+    });
+});
+    </script>
+</body>
+</html>
